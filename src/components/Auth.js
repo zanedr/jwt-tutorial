@@ -4,6 +4,14 @@ import styles from './styles.module.css';
 
 const Auth = ({ username }) => {
 
+function logOut(e){
+  e.preventDefault();
+  localStorage.removeItem('token');
+  localStorage.removeItem('username');
+  updateAuthStatus({loggedIn: false, username: '', token: ''
+  }, 'login');
+}
+
   return (
     <div className={styles.auth}>
       { username && 

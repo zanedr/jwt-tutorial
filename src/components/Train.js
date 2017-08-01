@@ -13,9 +13,7 @@ const Train = ({ id, line, status, canEdit, updateTrains }) => {
       body: JSON.stringify({ 
         train: { status: value }
       }),
-      headers: {
-        'Content-Type': 'application/json'
-      }
+      headers: {'Content-Type': 'application/json'}
     })
     .then(response => response.json())
     .then(updatedTrains => {
